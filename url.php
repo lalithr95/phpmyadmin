@@ -31,7 +31,7 @@ if (! PMA_isValid($_REQUEST['url'])
                 window.location='" . PMA_escapeJsString($_REQUEST['url']) . "';
             }
         </script>";
-    // Display redirecting msg on screen.
-    printf(__('Taking you to %s.'), htmlspecialchars($_REQUEST['url']));
+    // Display redirecting msg with domain name on screen.
+    printf(__('Taking you to %s domain.'), htmlspecialchars(parse_url($_REQUEST['url'])['host']));
 }
 die();
